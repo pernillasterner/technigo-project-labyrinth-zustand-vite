@@ -1,11 +1,11 @@
-import { StartMaze } from "./components/StartMaze/StartMaze";
 import { BackgroundImage } from "./components/BackgroundImage/BackgroundImage";
+import { MazeContent } from "./components/MazeContent";
 
 export const App = () => {
   return (
     <main>
       <BackgroundImage />
-      <StartMaze />
+      <MazeContent />
     </main>
   );
 };
