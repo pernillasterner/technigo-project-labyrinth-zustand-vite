@@ -1,5 +1,11 @@
-.maze__card {
-  position: relative;
-  z-index: 100;
-  background-color: var(--card-bg);
+.start__container {
+  &.maze__card {
+    position: relative;
+    z-index: 100;
+    background-color: var(--bg-card);
+  }
+
+  .errorMsg {
+    color: var(--clr-error);
+  }
 }
