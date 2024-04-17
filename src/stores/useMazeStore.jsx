@@ -1,13 +1,7 @@
 import { create } from "zustand";
 
 export const useMazeStore = create((set) => ({
-  globalUserName: "",
   isLoading: false,
-
-  // Update the username state
-  setGlobalUserName: (username) => {
-    set({ globalUserName: username });
-  },
 
   // Make the first request to start the maze
   // I need to do an async function and also get the username from the startmaze component

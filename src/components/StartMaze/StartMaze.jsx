@@ -6,7 +6,7 @@ import "./StartMaze.scss";
 export const StartMaze = () => {
   const [username, setUsername] = useState("");
   const [errorMsg, setErrorMessage] = useState("");
-  const { setGlobalUserName, fetchMazeData } = useMazeStore();
+  const { fetchMazeData } = useMazeStore();
 
   // Function that will get the username and
   // pass that to the startMaze function in the global store
@@ -21,8 +21,6 @@ export const StartMaze = () => {
       return;
     }
 
-    // Pass username to the global store
-    setGlobalUserName(username);
     fetchMazeData(username);
     setUsername("");
   };
