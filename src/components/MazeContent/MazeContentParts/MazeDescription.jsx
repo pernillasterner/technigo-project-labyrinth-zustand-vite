@@ -1,4 +1,4 @@
-import { useMazeStore } from "../../stores/useMazeStore";
+import { useMazeStore } from "../../../stores/useMazeStore";
 
 export const MazeDescription = () => {
   const { actions } = useMazeStore();

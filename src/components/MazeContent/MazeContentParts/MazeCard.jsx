@@ -1,5 +1,5 @@
-import "./MazeContent.scss";
-import { useMazeStore } from "../../stores/useMazeStore";
+import "./../MazeContent.scss";
+import { useMazeStore } from "../../../stores/useMazeStore";
 import { useState } from "react";
 import { MazeDescription } from "./MazeDescription";
 
@@ -14,12 +14,12 @@ export const MazeCard = () => {
   };
 
   return (
-    <>
+    <div className="card__container">
       <button className="toogle__btn" type="button" onClick={handleToggleBtn}>
         Show Descriptions
       </button>
       {/* Display more info when toggle */}
       {!toggleDescription ? <p>{description}</p> : <MazeDescription />}
-    </>
+    </div>
   );
 };
