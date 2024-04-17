@@ -1,13 +1,13 @@
 import { useState } from "react";
-import "./StartMaze.scss";
+import { useMazeStore } from "../../stores/useMazeStore";
 
-/**
- * Add a form to get the username and pass that to the body of the api
- */
+import "./StartMaze.scss";
 
 export const StartMaze = () => {
   const [username, setUsername] = useState("");
   const [errorMsg, setErrorMessage] = useState("");
+  const { setGlobalUserName, fetchMazeData } = useMazeStore();
+
   // Function that will get the username and
   // pass that to the startMaze function in the global store
   const handleSubmit = (e) => {
@@ -18,10 +18,12 @@ export const StartMaze = () => {
     if (!username.match(regex)) {
       setErrorMessage("Username can only contain letters");
       setUsername("");
+      return;
     }
 
     // Pass username to the global store
-    console.log(username);
+    setGlobalUserName(username);
+    fetchMazeData(username);
     setUsername("");
   };
 
