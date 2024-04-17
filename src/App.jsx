@@ -11,10 +11,8 @@ export const App = () => {
   return (
     <>
       {isLoading ? <Loader /> : null}
-      <main>
-        <BackgroundImage />
-        <MazeContent />
-      </main>
+      <BackgroundImage />
+      <MazeContent />
     </>
   );
 };

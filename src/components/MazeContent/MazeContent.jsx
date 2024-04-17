@@ -1,7 +1,8 @@
 import "./MazeContent.scss";
-import { StartMaze } from "./StartMaze";
+import { StartMaze } from "./MazeContentParts/StartMaze";
 import { useMazeStore } from "../../stores/useMazeStore";
-import { MazeCard } from "./MazeCard";
+import { MazeCard } from "./MazeContentParts/MazeCard";
+import { MazeDirections } from "./MazeContentParts/MazeDirections";
 
 export const MazeContent = () => {
   const { gameOn } = useMazeStore();
@@ -9,9 +10,15 @@ export const MazeContent = () => {
   console.log(`Is Game ON: ${gameOn}`);
 
   return (
-    <div className="maze__container">
+    <div className="maze__wrapper">
       {/* Show MazeCard when gameOn is true */}
-      {!gameOn ? <StartMaze /> : <MazeCard />}
+      {!gameOn ? (
+        <StartMaze />
+      ) : (
+        <>
+          <MazeCard /> <MazeDirections />
+        </>
+      )}
     </div>
   );
 };
