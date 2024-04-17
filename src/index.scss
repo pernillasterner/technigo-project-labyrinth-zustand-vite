@@ -18,6 +18,9 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+
+  // Colors
+  --card-bg: rgb(0, 0, 0, 0.7);
 }
 
 a {
@@ -37,14 +40,6 @@ body {
   min-width: 320px;
   min-height: 100vh;
 }
-
-// main {
-//   background-color: green;
-//   min-height: 100vh;
-//   min-width: 100vw;
-//   background-repeat: no-repeat;
-//   background-size: cover;
-// }
 
 h1 {
   font-size: 3.2em;
@@ -89,9 +84,6 @@ button:focus-visible {
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
-
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 
 .logo {

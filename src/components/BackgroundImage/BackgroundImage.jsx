@@ -1,6 +1,6 @@
 import "./BackgroundImage.scss";
 import { useState, useEffect } from "react";
-import backgroundImagesData from "../data/backgroundImagesData.json";
+import backgroundImagesData from "../../data/backgroundImagesData.json";
 
 export const BackgroundImage = () => {
   const [gameOn, setGameOn] = useState(false);
