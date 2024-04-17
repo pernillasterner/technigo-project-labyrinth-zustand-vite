@@ -1,6 +1,8 @@
 import { create } from "zustand";
 
 export const useMazeStore = create((set) => ({
+  actions: [],
+  description: "",
   isLoading: false,
 
   // Make the first request to start the maze
@@ -23,8 +25,12 @@ export const useMazeStore = create((set) => ({
         throw new Error("Fetching of maze data didn't work");
       }
 
+      // Get result
       const data = await response.json();
-      console.log(data);
+      set({ actions: data.actions, description: data.description });
+
+      console.log("Actions:", data.actions);
+      console.log("Description:", data.description);
     } catch (error) {
       console.error("Error: ", error);
       set({ isLoading: false, error });
