@@ -5,7 +5,8 @@ import "./../MazeContent.scss";
 export const StartMaze = () => {
   const [username, setUsername] = useState("");
   const [errorMsg, setErrorMessage] = useState("");
-  const { fetchMazeData, incrementStep, toggleGameOn } = useMazeStore();
+  const { fetchMazeData, incrementStep, toggleGameOn, setGlobalUsername } =
+    useMazeStore();
 
   // Function that will get the username and
   // pass that to the startMaze function in the global store
@@ -20,6 +21,7 @@ export const StartMaze = () => {
       return;
     }
 
+    setGlobalUsername(username);
     fetchMazeData(username);
     incrementStep();
     toggleGameOn();

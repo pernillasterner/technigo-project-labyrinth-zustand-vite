@@ -2,7 +2,13 @@ import "./../MazeContent.scss";
 import { useMazeStore } from "../../../stores/useMazeStore";
 
 export const MazeDirections = () => {
-  const { actions } = useMazeStore();
+  const { actions, incrementStep, fetchMazeAction, username } = useMazeStore();
+
+  const handleDirection = (direction) => {
+    console.log(`Handle Direction ${direction}`);
+    incrementStep();
+    fetchMazeAction(username, "move", direction);
+  };
 
   return (
     <>
@@ -10,6 +16,8 @@ export const MazeDirections = () => {
         <div
           key={`direction-${index}`}
           className={action.direction.toLowerCase()}
+          role="presentation"
+          onClick={() => handleDirection(action.direction)}
         >
           <div className="direction__btn">svg</div>
           <p>{action.direction}</p>

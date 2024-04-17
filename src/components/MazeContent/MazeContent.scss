@@ -14,7 +14,8 @@
   }
 
   //  Maze directions
-  .east {
+  .east,
+  .west {
     align-items: center;
     cursor: pointer;
     display: flex;
@@ -28,6 +29,34 @@
   .east {
     flex-direction: row-reverse;
     right: 0;
+  }
+
+  .west {
+    flex-direction: row;
+    left: 0;
+  }
+
+  .north,
+  .south {
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin: 10px;
+    position: absolute;
+  }
+
+  .north {
+    flex-direction: column;
+    left: calc(50% - 75px);
+    top: 0;
+  }
+
+  .south {
+    bottom: 0;
+    flex-direction: column-reverse;
+    right: calc(50% - 75px);
   }
 }
 
