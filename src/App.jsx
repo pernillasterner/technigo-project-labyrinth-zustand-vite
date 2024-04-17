@@ -1,8 +1,11 @@
+import { StartMaze } from "./components/StartMaze/StartMaze";
+import { BackgroundImage } from "./components/BackgroundImage/BackgroundImage";
 
 export const App = () => {
   return (
-  <div>
-    Labyrinth Project 
-  </div>
+    <main>
+      <BackgroundImage />
+      <StartMaze />
+    </main>
   );
 };
