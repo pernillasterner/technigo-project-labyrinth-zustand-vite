@@ -11,7 +11,7 @@ export const MazeContent = () => {
   return (
     <div className="maze__container">
       {/* Show MazeCard when gameOn is true */}
-      {gameOn ? <StartMaze /> : <MazeCard />}
+      {!gameOn ? <StartMaze /> : <MazeCard />}
     </div>
   );
 };
