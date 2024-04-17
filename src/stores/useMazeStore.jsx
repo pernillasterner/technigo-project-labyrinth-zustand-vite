@@ -1,14 +1,16 @@
 import { create } from "zustand";
 
 export const useMazeStore = create((set) => ({
+  gameOn: false,
+  step: 0,
   actions: [],
   description: "",
   isLoading: false,
 
-  // Make the first request to start the maze
-  // I need to do an async function and also get the username from the startmaze component
+  incrementStep: () => set((state) => ({ step: state.step + 1 })),
+  toggleGameOn: () => set((state) => ({ gameOn: !state.gameOn })),
 
-  // Post username with fetchAPI to get the first action
+  // Start the maze by posting username with fetchAPI to get the first action
   fetchMazeData: async (username) => {
     set({ isLoading: true });
     try {

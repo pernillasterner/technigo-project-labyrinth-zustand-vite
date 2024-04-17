@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { useMazeStore } from "../../stores/useMazeStore";
+import "./MazeContent.scss";
 
 export const StartMaze = () => {
   const [username, setUsername] = useState("");
   const [errorMsg, setErrorMessage] = useState("");
-  const { fetchMazeData } = useMazeStore();
+  const { fetchMazeData, incrementStep, toggleGameOn } = useMazeStore();
 
   // Function that will get the username and
   // pass that to the startMaze function in the global store
@@ -20,6 +21,8 @@ export const StartMaze = () => {
     }
 
     fetchMazeData(username);
+    incrementStep();
+    toggleGameOn();
     setUsername("");
   };
 
