@@ -15,6 +15,7 @@
     padding: 50px;
     max-height: 500px;
     max-width: 600px;
+    text-align: center;
 
     display: flex;
     flex-direction: column;
@@ -35,6 +36,33 @@
   }
 
   //  Maze directions
+  .direction__container {
+    .direction__card {
+      padding: 15px;
+      background-color: rgba(0, 0, 0, 0.5);
+      margin: 10px auto;
+      border: 1px solid rgb(179, 208, 182);
+      border-radius: 25px;
+      display: flex;
+      flex-direction: column;
+      -moz-box-pack: center;
+      justify-content: center;
+      -moz-box-align: center;
+      align-items: center;
+      gap: 12px;
+      text-align: left;
+
+      button {
+        margin: 5px;
+        padding: 8px 12px;
+        border-radius: 8px;
+        border: medium;
+        background-color: rgb(65, 97, 76);
+        color: white;
+        cursor: pointer;
+      }
+    }
+  }
   .direction__btn {
     width: 80px;
     height: 80px;

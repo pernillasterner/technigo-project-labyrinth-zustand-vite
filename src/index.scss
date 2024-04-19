@@ -52,6 +52,12 @@ h1 {
   color: var(--clr-primary);
 }
 
+p {
+  font-size: 22px;
+  margin-bottom: 15px;
+  margin-top: 0px;
+}
+
 input {
   border-radius: 8px;
   font-size: 16px;
@@ -78,6 +84,16 @@ button:hover {
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
+}
+
+.toggle__btn {
+  background-color: #17295c;
+  border: none;
+  border-radius: 25px;
+  color: #fff;
+  font-family: Gloria Hallelujah, cursive;
+  font-size: 16px;
+  padding: 8px 12px;
 }
 
 svg {
