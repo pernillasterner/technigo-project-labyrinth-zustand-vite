@@ -38,9 +38,9 @@ export const StartMaze = () => {
       <h1>The Maze</h1>
       <p>Enter the labyrinth on your own risk</p>
       <p>Can you find a way out of the maze?</p>
-      <form onSubmit={handleSubmit}>
+      <form className="form__username" onSubmit={handleSubmit}>
         <p className="errorMsg">{errorMsg}</p>
-        <label>
+        <label className="enter">
           Enter your username
           <input type="text" value={username} onChange={handleChange} />
         </label>

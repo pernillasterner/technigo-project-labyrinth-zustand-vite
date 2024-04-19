@@ -15,6 +15,7 @@ export const useMazeStore = create((set) => ({
   // Start the maze by posting username with fetchAPI to get the first action
   fetchMazeData: async (username) => {
     console.log("This is fetc MAze DATA");
+    console.log(username);
     set({ isLoading: true });
     try {
       const response = await fetch("https://labyrinth.technigo.io/start", {
