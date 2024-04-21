@@ -3,8 +3,8 @@ import { useMazeStore } from "../../../stores/useMazeStore";
 export const MazeDescription = () => {
   const { actions, incrementStep, fetchMazeAction, username } = useMazeStore();
 
+  // Function the will increment the global variable step with + 1 and pass data to API that handles actions
   const handleDirection = (direction) => {
-    console.log(`Handle Direction ${direction}`);
     incrementStep();
     fetchMazeAction(username, "move", direction);
   };

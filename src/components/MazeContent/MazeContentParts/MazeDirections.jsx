@@ -1,17 +1,16 @@
 import "./../MazeContent.scss";
 import { useMazeStore } from "../../../stores/useMazeStore";
-
-import { East, North, South, West } from "../../../assets/Icons.jsx";
+import { East, North, South, West } from "../../../assets/Icons";
 
 export const MazeDirections = () => {
   const { actions, incrementStep, fetchMazeAction, username } = useMazeStore();
 
   const handleDirection = (direction) => {
-    console.log(`Handle Direction ${direction}`);
     incrementStep();
     fetchMazeAction(username, "move", direction);
   };
 
+  // Function that selects the direction icons depending on the data from the API
   const getDirectionIcon = (direction) => {
     switch (direction) {
       case "North":

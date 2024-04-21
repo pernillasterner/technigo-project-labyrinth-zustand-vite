@@ -14,8 +14,6 @@ export const useMazeStore = create((set) => ({
 
   // Start the maze by posting username with fetchAPI to get the first action
   fetchMazeData: async (username) => {
-    console.log("This is fetc MAze DATA");
-    console.log(username);
     set({ isLoading: true });
     try {
       const response = await fetch("https://labyrinth.technigo.io/start", {
@@ -43,7 +41,6 @@ export const useMazeStore = create((set) => ({
   },
 
   fetchMazeAction: async (username, type, direction) => {
-    console.log("This is fetc MAze ACTION");
     set({ isLoading: true });
 
     try {
@@ -63,9 +60,6 @@ export const useMazeStore = create((set) => ({
       // Get result
       const data = await response.json();
       set({ actions: data.actions, description: data.description });
-
-      console.log("Actions:", data.actions);
-      console.log("Description:", data.description);
     } catch (error) {
       console.error("Error: ", error);
       set({ isLoading: false, error });
