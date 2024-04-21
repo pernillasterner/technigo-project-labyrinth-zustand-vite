@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useState, useId } from "react";
 import { useMazeStore } from "../../../stores/useMazeStore";
 import "./../MazeContent.scss";
 
 export const StartMaze = () => {
+  const generatedID = useId();
   const [username, setUsername] = useState("");
   const [errorMsg, setErrorMessage] = useState("");
   const { fetchMazeData, incrementStep, toggleGameOn, setGlobalUsername } =
@@ -21,8 +22,12 @@ export const StartMaze = () => {
       return;
     }
 
-    setGlobalUsername(username);
-    fetchMazeData(username);
+    // Add unique Id before passing the username to global state.
+    const usernameWithId = `${username}-${generatedID}`;
+
+    // Passing data to -> Global State
+    setGlobalUsername(usernameWithId);
+    fetchMazeData(usernameWithId);
     incrementStep();
     toggleGameOn();
     setUsername("");

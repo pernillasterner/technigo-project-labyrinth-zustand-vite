@@ -6,8 +6,6 @@ import { useMazeStore } from "./stores/useMazeStore";
 export const App = () => {
   const { isLoading } = useMazeStore();
 
-  console.log(`Is Loading: ${isLoading}`);
-
   return (
     <>
       {isLoading ? <Loader /> : null}

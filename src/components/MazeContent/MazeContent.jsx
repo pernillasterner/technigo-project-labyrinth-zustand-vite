@@ -7,8 +7,6 @@ import { MazeDirections } from "./MazeContentParts/MazeDirections";
 export const MazeContent = () => {
   const { gameOn } = useMazeStore();
 
-  console.log(`Is Game ON: ${gameOn}`);
-
   return (
     <div className="maze__wrapper">
       {/* Show MazeCard when gameOn is true */}
